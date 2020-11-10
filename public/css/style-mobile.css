@@ -1,0 +1,373 @@
+@media only screen and (max-device-width: 500px){
+    *{
+        font-size: 1.2em
+    }
+    nav{
+        display: none;
+    }
+    main{
+        width: 100%;
+    }
+    .main-content{
+        width: 100%;
+    }
+    .mobile-header{
+        position: fixed;
+        display: flex;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 8vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-header div{
+        height: 90%;
+        width: 95%;
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-header img{
+        height: 70%;
+    }
+
+    .logo{
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .logo h2{
+        font-size: 1.6em;
+        letter-spacing: 0.1em;
+    }
+
+    .logo img{
+        margin-left: 1%;
+    }
+
+
+    .news-block-type1,.news-block-type2,.news-block-type3{
+        width: 100%;
+        height: 35vh;        
+    }
+    .content-type1 > p,.content-type2 > p,.content-type3 > p {
+        display: none;
+    }
+
+    .content-type1 > h5,.content-type2 > h5,.content-type3 > h5{
+        font-size: 0.55em;
+    }
+
+    /*
+    
+        sekcja strony głównej
+    
+    */
+
+    .slider{
+        height: 35vh;
+    }
+    
+    .title-container{
+        top: calc(35vh/2.0 - 2em);
+    }
+
+    .title-container h1{
+        font-size: 1.2em;
+    }
+
+    .slider-dots{
+        left: 30%;
+    }
+
+    .section-main{
+        margin-top:1em;
+        grid-template-columns: 1fr;
+        grid-gap:1em;
+    }
+
+   
+    .photo-type1{
+        height: 65%;
+    }
+    .text-type1{
+        height: 35%;        
+    }
+    .content-type1{
+        height: 90%;
+    }
+
+    .content-type1 > h5{
+        font-size: 0.55em;
+    }
+   
+   
+    .social-buttons{
+        height: 30%;
+    }
+
+    .social-buttons p{
+        font-size: 0.4em;
+    }
+    .social-buttons img{
+        height: 0.4em;
+    }
+
+     /*
+    
+        sekcja newsów
+    
+    */
+
+    .section-news {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    .news-block-type2{
+        flex-direction: column-reverse
+    }
+
+    .photo-type2{
+        width: 100%;
+        height: 65%;
+    }
+    .text-type2{
+        width: 100%;
+        height: 35%;
+    }
+
+    .content-type3 .social-buttons{
+        display: flex;
+        
+    }
+    
+    .section-news .news-block-type1,.section-news .news-block-type2,.section-news .news-block-type3{
+        width: 100%;
+        height: 40vh;        
+    }
+
+    /*
+    
+        sekcja wyszukiwania
+
+    */
+
+    .search-panel{
+        height: 10vh;
+    }
+    
+
+    .search-panel form{
+        justify-content: center;
+    }
+    
+    input[name="search"]{
+        width: 80%;
+        height: 60%;
+    }
+
+    .search-panel img {
+        height: 40%;
+        top: 13%;
+        left: 20%;
+    }
+
+    .section-search{
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    .section-search .news-block-type1,.section-search .news-block-type3{
+        width: 100%;
+        height: 40vh;        
+    }
+    .search-end{
+        margin: 8% 0;
+    }
+
+    /*
+    
+    sekcja aktykułu
+    
+    */
+
+    .article-title h1{
+        margin-top:0.6em;
+        letter-spacing: 0.1em;
+    }
+    
+    .article-title h2{
+        font-size: 0.7em;
+        font-weight: normal;
+    }
+    
+    .article-text{
+        font-size: 0.35em;
+        text-align: center;
+    }
+
+    /*
+    
+        sekcja ekipy
+    
+    */
+
+    .section-crew{
+        grid-template-columns: 1fr;
+        grid-gap: 0.1em;
+    }
+    
+    .crew-member{
+        height: 40vh;
+    }
+
+    .crew-member-content{
+        width: 90%;
+    }
+
+    .crew-data{
+        flex-direction: row;
+    }
+
+    .crew-data h1 {
+        font-size:0.45em;
+        margin: 0;
+    }
+
+    .crew-data p {
+        font-size: 0.40em;
+        margin: 0;
+    }
+
+    .crew-data img {
+        width: 3em;
+        height: 3em;
+    }
+
+    .crew-complex-data {
+        justify-content: space-between;
+    }
+    .crew-social-networks {
+        justify-content: space-between;
+    }
+    .crew-social-networks img {
+        width: 0.8em;
+    }
+
+    /*
+    
+    sekcja kontaktu    
+    
+    */
+
+    .section-contact{
+        flex-direction: column;
+    }
+    
+    .fast-contact{
+        margin:0;
+        width: 80%;
+        flex-direction: column;
+    }
+    .fast-contact-form{
+        height: 70vh;
+        justify-content:flex-start;
+    }
+    .fast-contact-form * {
+        margin-top: 1.5em;
+        font-size:0.6em;
+    }  
+
+    .fast-contact-form h1 {
+        font-size: 1.3em;
+        margin:0;
+        margin-top: 8%;
+    }
+    
+    .fast-contact-form input {
+        height: 2.5em;
+    }
+
+    .fast-contact-form button { 
+        width: 90%;
+        font-size: 0.7em;
+    }
+
+    .contact-info{
+        padding: 5vh 0;
+        border: 0;
+        border-top: 2px white solid;
+        justify-content: flex-start;
+        width: 90%;
+        text-align: center;
+    }
+
+    .contact-info * {
+        margin:0;
+        font-size: 1.2em;
+        margin-bottom: 0.2em;
+    }
+
+
+    /*
+    
+        menu boczne
+    
+    */
+
+   
+ 
+    /*
+    tymczasowo ------|
+                    \/
+    
+    */
+    main,.mobile-header{
+        display: none;
+    }
+
+    nav{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .nav-content{
+        height: 90%;
+        border:0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-content *{
+        font-size: 1.1em;;
+    }
+
+    .nav-content .logo{
+        height: 20vh;
+    }
+
+    .nav-content .logo h2{
+        font-size: 2em;
+    }
+
+    .nav-content li {
+        margin-bottom: 1.7em;
+    }
+
+    
+    #close-menu{
+        display: flex;
+        position: absolute;
+        top:0.8em;
+        right: 0.8em;
+        height: 2.5em;
+    }
+
+}

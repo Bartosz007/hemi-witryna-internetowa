@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-family: Oxygen;
+}
+
+h2{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+
+.center-container{
+    width: 70vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #EC3D0FE5 0%, #F84B06DA 76%, #FF5400D3 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-container img{
+    height: 80vh;
+    width: 40vw;
+}
+
+.right-container, .left-container{
+    width: 30vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-container{
+    display: none;
+  
+}
+
+form{
+    height: 60vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.login-form{
+    height: 60vh;
+    justify-content: space-around;
+}
+.register-form{
+    height: 90vh;
+    justify-content: space-between;
+}
+
+input::placeholder{
+    color:black;
+    font-weight: bolder;
+}
+
+input{
+    text-align: center;
+    background-color: white;
+    border: 0;
+    border-bottom: 2px solid #FF5400D3;
+    height: 5vh;
+    font-size: 0.9em;
+    letter-spacing: 3px;
+}
+
+button{
+    background: transparent linear-gradient(90deg, #EC3D0FE5 0%, #F54808DC 63%, #FF5400D3 100%) 0% 0% no-repeat padding-box;
+    border: 0;
+    height: 3em;
+    color: #FFFFFF;
+    margin-top: 5px;    
+    font-weight: bold;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button p{
+    margin: 0 auto;
+    letter-spacing: 2px;
+}
+
+button img{
+    height: 1.6em;
+}
+
+
+
+@media only screen and (max-device-width: 480px){
+    *{
+        font-size: 60px;
+    }
+    .left-container{
+        width: 100vw;
+    }
+    .center-container{
+        display: none;
+    }
+    .right-container{
+        width: 100vw;
+    }
+    
+    form{
+        height: 80vh;        
+    }
+    button{
+        height: 3.5em;
+    }
+    button p{
+        font-size: 1em;
+        letter-spacing: 3px;
+    }
+    button img{
+        height: 1.2em;
+    }
+}

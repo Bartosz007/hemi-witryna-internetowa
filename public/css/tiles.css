@@ -1,0 +1,148 @@
+.news-block-type1,.news-block-type2,.news-block-type3{
+    background: #E23217D3;
+    height: 40vh;
+}
+
+
+.news-block-type1 h5,.news-block-type2 h5,.news-block-type3 h5{
+    margin: 0;
+    font-size: 0.7em;
+}
+
+.news-block-type1 p,.news-block-type2 p,.news-block-type3 p{
+    margin-top: 0;
+    font-size: 0.7em;
+}
+
+.news-block-type1 img, .news-block-type2 img,.news-block-type3 img{
+    width: 100%;
+    height: 100%;;
+}
+
+/*
+
+    type 1
+
+*/
+
+.news-block-type1{
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-type1,.text-type1{
+    width: 100%;
+    height: 50%;
+}
+
+
+.text-type1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-type1{
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.social-buttons{
+    display: flex;
+}
+.social-buttons div{
+    width: 50%;
+}
+
+.social-buttons img{
+    height: 0.8em;
+    width: 0.8em;
+}
+.social-buttons p{
+    margin: 0;
+    font-size: 0.6em;
+}
+
+.left-side{
+    display: flex;    
+    justify-content: space-between
+}
+
+.right-side{
+    display: flex;
+    justify-content: flex-end;
+}
+.right-side img{
+    margin-left: 0.2em;
+}
+
+/*
+
+    type 2
+
+*/
+
+.news-block-type2{
+    display: flex;
+}
+
+.photo-type2{
+    width: 60%;
+    height: 100%;
+}
+.text-type2{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-type2{
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*
+
+    type 3
+
+*/
+
+.news-block-type3{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.photo-type3{
+    width: 100%;
+    height: 65%;
+}
+
+.text-type3{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-type3{
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.content-type3 .social-buttons{
+    display: none;
+}

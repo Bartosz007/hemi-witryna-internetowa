@@ -1,0 +1,440 @@
+*{    
+    font-family: Oxygen;
+}
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    overflow: hidden;
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #EC3D0FE5 0%, #F84B06DA 76%, #FF5400D3 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    align-items: flex-end;
+}
+.mobile-header{
+    display: none;
+}
+/*
+
+    sekcja nawigacji
+
+*/
+
+nav{
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.nav-content{
+    width: 85%;
+    height: 80%;    
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 10vh;
+}
+
+.logo h2{
+    margin: 0;
+    letter-spacing: 1.4px;
+    font-size: 1.3em;
+}
+
+.logo img{
+    width: 1.8em;
+    margin-left: 10%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    height: 80%;
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    font-size: .75em;
+    font-weight: bold;
+}
+
+li{
+    margin-bottom: 1.2em;
+}
+
+li:last-child{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+
+li:last-child img{
+    margin: 0;
+    margin-left: 1em;
+    width: 1.2em;
+}
+
+/*
+
+    główna sekcja
+
+*/
+main{
+    width: 75vw;
+    height: 90vh;
+    display: flex;  
+    justify-content: center;
+    overflow-x:auto;
+}
+
+.main-content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+
+    sekcja newsów
+
+*/
+
+.section-news{
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 3em;
+}
+
+.slider{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;;
+}
+
+.title-container{
+    position: absolute;
+    background: #22202082 0% 0% no-repeat padding-box;
+    width: 100%;
+    text-align: center;
+    
+    top:calc(50vh/2.0 - 2em);
+}
+
+.title-container h1{
+    font-size: 1.8em;
+    letter-spacing: 0.1em;
+}
+
+.section-main{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3em;
+}
+
+.slider-dots{    
+    position: absolute;
+    display: flex;    
+    bottom: 0.5em;
+    left:44%
+}
+
+.dot{
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 1em;
+    background-color: white;
+    margin-left: 0.3em;
+}
+
+
+/*
+
+    sekcja artykułów
+
+*/
+
+article{
+    width: 90%;
+}
+
+.article-title{
+    text-align: center;
+}
+
+.article-title h1{
+    margin: 0;
+    margin-top:0.7em;
+    letter-spacing: 0.1em;
+}
+
+.article-title h2{
+    margin: 0;
+    margin: 0.5em auto;
+    font-size: 1em;
+}
+
+.article-text{
+    font-size: 0.8em;
+}
+
+/*
+
+    sekcja ekipy
+
+*/
+
+.section-crew{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+}
+
+.crew-member{
+    background: #E23217D3;  
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crew-member-content{
+    width: 80%;
+    height: 80%;
+    text-align: center;    
+    display: flex;
+    flex-direction: column;
+
+}
+
+.crew-data{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.crew-complex-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60%;
+}
+
+.crew-data img{
+    width: 4.6em;
+    height: 4.6em;
+}
+
+.crew-data h1{
+    font-size: 1em;
+    margin: 0;
+}
+
+.crew-data p{
+    font-size: 0.7em;
+    margin: 0;
+}
+
+.crew-social-networks{   
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.crew-social-networks img{
+    width: 1em;
+}
+
+/*
+
+    sekcja wyszukiwania
+
+*/
+
+.section-search{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3em;
+}
+
+.search-panel{
+    width: 100%;
+    height: 14vh;
+}
+
+.search-panel form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+}
+
+input[name="search"]{
+    border: 0;
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    
+}
+
+input[name="search"]::placeholder{
+    border: 0;
+    color: black;
+}
+
+.search-panel img{
+    height: 30%;
+    position: absolute;    
+    top:6%;
+    right:35%;
+}
+
+.search-end{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-end .dot{
+    background-color: #000000;
+}
+
+/*
+
+    sekcja kontaktu
+
+*/
+
+.section-contact{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.fast-contact{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10%;
+}
+
+.fast-contact-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+    text-align: center;
+}
+
+.fast-contact-form h1{
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    justify-content: center;
+    margin:0;
+    margin-bottom: 0.6em;
+}
+
+.fast-contact-form input{
+    border: 0;
+    outline: 0;
+    text-align: center;
+    height: 2em;
+    width: 90%;
+}
+
+.fast-contact-form input::placeholder{
+    color: black;
+}
+
+.fast-contact-form textarea{
+    border: 0;
+    outline: 0;
+    text-align: center;
+    resize: none;
+    height: 8em;
+    width: 90%;
+}
+
+.fast-contact-form button{
+    height: 2.5em;
+    width: 70%;
+    color: white;
+    text-align: center;
+    border:0;
+    background: #E23217D3;  
+    
+}
+
+.fast-contact-form *{
+    margin-top:2em;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+.contact-info{
+    width: 50%;
+    height: 80%;
+    border-left: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info *{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin:0;
+    margin-bottom: 0.6em;
+    margin-left: 1em;
+}
+
+#close-menu{
+    display: none;
+}
