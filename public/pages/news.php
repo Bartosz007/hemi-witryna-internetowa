@@ -32,7 +32,7 @@
                     </div>
                     
                     <ul>
-                        <li><a href="index" >Strona główna</a></li>
+                        <li><a href="main" >Strona główna</a></li>
                         <li><a href="#" >News</a></li>
                         <li><a href="crew" >Ekipa</a></li>
                         <li><a href="contact" >Kontakt</a></li>

@@ -1,11 +1,11 @@
 <?php
 
-require_once "AppController.php";
+require_once "Controller.php";
 
-class DefaultController extends AppController {
+class DefaultController extends Controller {
 
-    public function index(){
-        $this->render("index");
+    public function main(){
+        $this->render("main");
     }
 
     public function login(){

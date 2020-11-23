@@ -36,18 +36,26 @@
 
 
         <div class="center-container">
-            <a href="index">
+            <a href="main">
                 <img src="public/img/icons/big-logo.svg" alt="big-logo">
             </a>
         </div>
 
         <div class="right-container">
 
-            <form class="login-form">
+            <form class="login-form" action="login" method="POST">
+
+                <?php if(isset($messages)){
+                    foreach ($messages as $message){
+                        echo $message;
+                    }
+                }
+                ?>
+
                 <h2>Zaloguj się</h2>
                 <input type="email" name="email" placeholder="Adres email">
                 <input type="password" name="password" placeholder="Hasło">
-                <button name="next" class="next">
+                <button name="next" class="next" type="submit">
                     <p>DALEJ</p>
                     <img src="public/img/icons/right-arrow.svg" alt="right-arrow">
 
