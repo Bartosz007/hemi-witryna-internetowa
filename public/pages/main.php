@@ -3,11 +3,14 @@
     <head>
         <title>Hemi</title>
         <meta charset="UTF-8"/>
+        <link rel="icon" href="public/img/icons/logo.svg">
+
         <link rel="stylesheet" type="text/css" href="public/css/style-main.css">
         <link rel="stylesheet" type="text/css" href="public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="public/css/style-mobile.css">
 
-        <link rel="icon" href="public/img/icons/logo.svg">
+        <script type="text/javascript" src="public/js/BasicOperations.js"></script>
+
     </head>
 
     <body>
@@ -36,7 +39,14 @@
                         <li><a href="news" >News</a></li>
                         <li><a href="crew" >Ekipa</a></li>
                         <li><a href="contact" >Kontakt</a></li>
-                        <li><a href="login" >Zaloguj się</a></li>
+                        <?php
+                            if(isset($_COOKIE["email"])){
+                                echo '<li id="logout"><a href="#" >Wyloguj się</a></li>';
+                            }else{
+                                echo '<li><a href="login" >Zaloguj się</a></li>';
+                            }
+                        ?>
+
                         <li>
                             <a href="search" >Szukaj
                                 <img src="public/img/icons/search.svg" alt="search">

@@ -3,18 +3,22 @@
 
 class User
 {
-    private $email;
-    private $password;
-    private $name;
-    private $surname;
+    private string $email;
+    private string $password;
+    private string $name;
+    private string $surname;
+    private int $age;
+    private bool $admin;
 
 
-    public function __construct(string $email,string $password,string $name,string $surname)
+    public function __construct(string $email, string $password, string $name, string $surname, int $age, bool $admin)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->age = $age;
+        $this->admin = $admin;
     }
 
 
@@ -56,6 +60,26 @@ class User
     public function setSurname(string $surname): void
     {
         $this->surname = $surname;
+    }
+
+    public function getAge(): string
+    {
+        return $this->age;
+    }
+
+    public function setAge(string $age): void
+    {
+        $this->age = $age;
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(bool $admin): void
+    {
+        $this->admin = $admin;
     }
 
 

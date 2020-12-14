@@ -14,7 +14,7 @@
                 <h2>Zarejestruj się</h2>
                 <input type="text" name="name" placeholder="Imię">
                 <input type="text" name="surname" placeholder="Nazwisko">
-                <input type="number" name="name" min="13" max="100" placeholder="Wiek">
+                <input type="number" name="age" min="13" max="100" placeholder="Wiek">
                 <input type="email" name="email" placeholder="Podaj adres email">
                 <input type="password" name="password" placeholder="Podaj hasło">
                 <input type="password" name="repassword" placeholder="Powtórz hasło">
@@ -43,7 +43,7 @@
 
         <div class="right-container">
 
-            <form class="login-form" action="login" method="POST">
+            <form class="login-form" action="loginForm" method="POST">
 
                 <?php if(isset($messages)){
                     foreach ($messages as $message){

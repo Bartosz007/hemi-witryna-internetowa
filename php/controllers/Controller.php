@@ -25,7 +25,7 @@ class Controller {
     protected function render(string $template = null, array $variables = []){
 
         $path = "public/pages/".$template.self::$ext;
-        $out="File don't exists";
+        $out = "File don't exists";
 
         if(file_exists($path)){
             extract($variables);

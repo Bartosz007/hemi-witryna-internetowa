@@ -312,6 +312,17 @@
         margin-bottom: 0.2em;
     }
 
+    /*
+
+        sekcja dodawania
+
+
+    */
+    .add-form{
+        width: 90%;
+        font-size: 1em;
+    }
+
 
     /*
     
@@ -325,7 +336,7 @@
     tymczasowo ------|
                     \/
     
-    */
+
     main,.mobile-header{
         display: none;
     }
@@ -369,5 +380,5 @@
         right: 0.8em;
         height: 2.5em;
     }
-
+*/
 }

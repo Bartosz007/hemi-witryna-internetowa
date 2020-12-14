@@ -81,7 +81,48 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium poeyi
                 
                     </article>
 
-                
+                    <div class="like">
+                        <img src="public/img/icons/heart.svg" alt="like">
+                        <p>49</p>
+                    </div>
+
+                    <section class="comment-section">
+
+                        <div class="comment">
+                            <div class="comment-owner">
+                                Andrzej Wywiał
+                            </div>
+                            <div class="comment-context">
+                                Też miałem tego chargera, palił jak smok, co chwilę trzeba było opony wymieniać,
+                                z wiadomo jakich przyczyn ;) Ciekawie było jak mi uszczelka pod głowicą pękła.
+                                Dorobiłem ją samemu w pracy, bo przecież już nawet nie produkują takich części.
+                                Rozkręcenie niemal 7 litrowego hemi też nie jest łatwe, siedziałem na tym chyba z 2 miesiące.
+                                Na szczęście udało mi się to poskręcać i nawet chwilę pojeździł. No właśnie - chwilę, pewnego dnia
+                                jak go odpaliłem to zaczął chodzić jak 10 letnia pralka z niemal wyrwanym bębnem.
+                                Okazało się że pęknął kolektor wdechowy, tego było już za wiele i sprzedałem tą starą kurwe.
+                            </div>
+                        </div>
+
+                        <div class="comment">
+                            <div class="comment-owner">
+                                Monika Stopińska
+                            </div>
+                            <div class="comment-context">
+                                Pięknę auto. Od zawsze o takim marzyłam!
+                            </div>
+                        </div>
+
+                        <div class="comment">
+                            <form class="add-comment-form">
+                                <textarea class="text-new-comment" rows="1" cols="1">
+
+                                </textarea>
+                                <button class="add-comment">Dodaj</button>
+                            </form>
+                        </div>
+
+                    </section>
+
                 </div>
             </main>
 

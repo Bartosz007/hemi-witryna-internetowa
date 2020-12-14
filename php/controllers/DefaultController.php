@@ -8,9 +8,10 @@ class DefaultController extends Controller {
         $this->render("main");
     }
 
-    public function login(){
+  /*  public function login(){
         $this->render("login");
     }
+  */
 
     public function article(){
         $this->render("article");
@@ -30,6 +31,10 @@ class DefaultController extends Controller {
 
     public function search(){
         $this->render("search");
+    }
+
+    public function add(){
+        $this->render("add");
     }
 
 }

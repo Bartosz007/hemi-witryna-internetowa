@@ -15,6 +15,10 @@ Routing::get("crew","DefaultController");
 Routing::get("news","DefaultController");
 Routing::get("search","DefaultController");
 
-Routing::post("login","SecurityController");
+Routing::get("add","AddController");
+Routing::post("addArticle","AddController");
+
+Routing::get("login","SecurityController");
+Routing::post("loginForm","SecurityController");
 
 Routing::run($path);
