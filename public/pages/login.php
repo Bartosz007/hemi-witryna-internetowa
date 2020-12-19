@@ -6,7 +6,9 @@
         <link rel="stylesheet" type="text/css" href="public/css/style-log.css">
         <link rel="icon" href="public/img/icons/logo.svg">
 
+        <script defer type="text/javascript" src="public/js/functions.js"></script>
         <script defer type="text/javascript" src="public/js/login-scripts.js"></script>
+        <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
 
     </head>
 
@@ -14,13 +16,13 @@
         <div class="left-container">
             <form class="register-form" enctype="multipart/form-data" method="POST" action="registerForm">
                 <h2>Zarejestruj się</h2>
-                <input type="text" name="name" placeholder="Imię">
-                <input type="text" name="surname" placeholder="Nazwisko">
-                <input type="email" name="email" placeholder="Podaj adres email">
-                <input type="password" name="password" placeholder="Podaj hasło">
-                <input type="password" name="repassword" placeholder="Powtórz hasło">
-                <input type="file" name="avatar" placeholder="Podaj zdjęcie profilowe">
-                <button name="next" class="buttons">
+                <input type="text" name="name" placeholder="Imię" required>
+                <input type="text" name="surname" placeholder="Nazwisko" required>
+                <input type="email" name="email" placeholder="Podaj adres email" required>
+                <input type="password" name="password" placeholder="Podaj hasło" required>
+                <input type="password" name="repassword" placeholder="Powtórz hasło" required>
+                <input type="file" name="avatar" placeholder="Podaj zdjęcie profilowe" required>
+                <button type="submit" name="next" class="buttons">
                     <p>DALEJ</p>
                     <img src="public/img/icons/right-arrow.svg" alt="right-arrow">
 
@@ -47,7 +49,7 @@
                 <h2>Zaloguj się</h2>
                 <input type="email" name="email" placeholder="Adres email">
                 <input type="password" name="password" placeholder="Hasło">
-                <button name="next" class="buttons" type="submit">
+                <button type="submit" name="next" class="buttons">
                     <p>DALEJ</p>
                     <img src="public/img/icons/right-arrow.svg" alt="right-arrow">
 

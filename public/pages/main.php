@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="public/css/style-mobile.css">
 
-        <script type="text/javascript" src="public/js/BasicOperations.js"></script>
+        <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
 
     </head>
 
@@ -40,11 +40,15 @@
                         <li><a href="crew" >Ekipa</a></li>
                         <li><a href="contact" >Kontakt</a></li>
                         <?php
-                            if(isset($_COOKIE["email"])){
-                                echo '<li id="logout"><a href="#" >Wyloguj się</a></li>';
-                            }else{
+                            if(isset($_COOKIE["email"]))
+                                echo '<li id="logout"><a href="login" >Wyloguj się</a></li>';
+                            else
                                 echo '<li><a href="login" >Zaloguj się</a></li>';
-                            }
+
+
+                            if(isset($_COOKIE["admin"]) && $_COOKIE["admin"] = true)
+                                echo '<li><a href="add" >Dodaj artukuł</a></li>';
+
                         ?>
 
                         <li>

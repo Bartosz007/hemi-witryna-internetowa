@@ -2,13 +2,13 @@
 
 require_once "SETTINGS.php";
 
-function validate(array $file): bool{
+function validate(int $size, string $type): bool{
 
-    if($file["size"] > MAX_FILE_SIZE){
+    if($size > MAX_FILE_SIZE){
         return false;
     }
 
-    if(!isset($file["type"]) || !in_array($file["type"],SUPPORTED_TYPES)){
+    if(!isset($type) || !in_array($type,SUPPORTED_TYPES)){
         return false;
     }
 

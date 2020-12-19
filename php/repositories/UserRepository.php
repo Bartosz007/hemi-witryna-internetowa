@@ -112,4 +112,15 @@ class UserRepository extends Repository
         return $data["id_user_details"];
     }
 
+    public function getUserId(string $email): int{
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM "hemi-site"."users" WHERE email = :email; 
+        ');
+
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data["id_user"];
+    }
 }

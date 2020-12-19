@@ -7,12 +7,12 @@ require_once __DIR__."/../helpers/basicFunctions.php";
 
 class SecurityController extends Controller
 {
-    private $userConnection;
+    private UserRepository $userRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->userConnection = new UserRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function login(){
@@ -34,7 +34,7 @@ class SecurityController extends Controller
         $email = $_POST["email"];
         $password = hash("Whirlpool", $_POST["password"]);
 
-        $user = $this->userConnection->getUser($email,$password);
+        $user = $this->userRepository->getUser($email,$password);
 
         if(!$user){
             return $this->render("login",["messages"=>["Podano złe dane logowania!"]]);
@@ -57,7 +57,7 @@ class SecurityController extends Controller
         if($_POST["password"] !=  $_POST["repassword"])
             return $this->render("login",["messages"=>["Podane hasła się różnią!"]]);
 
-        if(!is_uploaded_file($_FILES["avatar"]["tmp_name"]) || !validate($_FILES["avatar"]))
+        if(!is_uploaded_file($_FILES["avatar"]["tmp_name"]) || !validate($_FILES["avatar"]["size"],$_FILES["avatar"]["type"]))
             return $this->render("login",["messages"=>["Niedozwolony format pliku!"]]);
 
 
@@ -69,7 +69,7 @@ class SecurityController extends Controller
 
         $user = new User($email,$password,$name,$surname);
 
-        $conn = $this->userConnection->addUser($user,$avatar);
+        $conn = $this->userRepository->addUser($user,$avatar);
 
         if(!$conn){
             return $this->render("login",["messages"=>["Taki użytkownik juz istnieje!"]]);

@@ -3,41 +3,85 @@
 require_once "Controller.php";
 require_once __DIR__."/../helpers/basicFunctions.php";
 require_once __DIR__."/../helpers/SETTINGS.php";
+require_once __DIR__."/../repositories/ArticleRepository.php";
 
 class AddController extends Controller
 {
 
-    private $messages = [];
+    private array $messages = [];
+    private ArticleRepository $articleRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->articleRepository = new ArticleRepository();
+    }
 
     public function add(){
-        return $this->render("add-article");
+        if($_COOKIE["admin"] == true)
+            return $this->render("add-article");
+        else
+            return $this->render("main");
+
     }
 
     public function addArticle(){
-        if($this->isPost() && is_uploaded_file($_FILES["files"]["tmp_name"]) && validate($_FILES["files"])){
-            move_uploaded_file(
-                $_FILES["files"]["tmp_name"],
-                dirname(__DIR__).PHOTOS_UPLOAD_DIRECTORY.$_FILES['files']['name']
-            );
-            return $this->render("news",["messages" => $this->messages]);
+        if(!$this->isPost())
+            return $this->render("add-article");
+
+        $tmpFileNames = [];
+        $tmpTmpFileNames = [];
+        $files = count($_FILES["files"]["name"]);
+        $i = 0;
+        while ($i < $files && count($tmpFileNames)<5){ //maksymalnie 5 władowanych plików
+            if(is_uploaded_file($_FILES["files"]["tmp_name"][$i])
+                && validate($_FILES["files"]["size"][$i],$_FILES["files"]["type"][$i])){
+
+               // $date = new DateTime();
+               // $date->format('Y-m-d')
+
+                $fileid = explode("/",$_FILES["files"]["tmp_name"][$i])[2];
+                $ext = pathinfo($_FILES["files"]["name"][$i], PATHINFO_EXTENSION);
+                $filename =  $fileid."-".rand().".".$ext;
+
+                array_push($tmpFileNames, $filename);
+                array_push($tmpTmpFileNames, $_FILES["files"]["tmp_name"][$i]);
+
+            }
+            $i++;
         }
 
-        return $this->render("add-article",["messages" => $this->messages]);
+        if(count($tmpFileNames) > 0){
+
+            for($i = 0; $i<count($tmpFileNames); $i++){
+                move_uploaded_file(
+                    $tmpTmpFileNames[$i],
+                    dirname(__DIR__).PHOTOS_UPLOAD_DIRECTORY.$tmpFileNames[$i]
+                );
+            }
+
+        }else{
+            return $this->render("add-article",["messages" => ["Wysłane pliki są nieprawidłowe!"]]);
+        }
+        $date = new DateTime();
+        $date->format('Y-m-d');
+        $userRepository = new UserRepository();
+
+        $article = new Article($_POST["title"],
+            $_POST["subtitle"],
+            $_POST["text"],
+            implode(",",$tmpFileNames),
+            $date->format('Y-m-d'),
+            $userRepository->getUserId($_COOKIE["email"])
+        );
+
+        $conn = $this->articleRepository->addArticle($article);
+
+        if(!$conn)
+            return $this->render("add-article",["messages" => ["Wystąpił błąd!"]]);
+
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/news");
     }
-
-    private function validate(array $files): bool
-    {
-        if($files["size"] > MAX_FILE_SIZE){
-            $this->messages[]="Plik jest za duży!";
-            return false;
-        }
-
-        if(!isset($files["type"]) || !in_array($files["type"],SUPPORTED_TYPES)){
-            $this->messages[]="Zły format pliku!";
-            return false;
-        }
-        return true;
-
-    }
-
 }
