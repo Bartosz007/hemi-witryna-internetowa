@@ -1,6 +1,6 @@
 <?php
 
-require_once "private.php";
+require_once "helpers/private.php";
 
 class Database{
 

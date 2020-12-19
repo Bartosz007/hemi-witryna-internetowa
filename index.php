@@ -20,5 +20,7 @@ Routing::post("addArticle","AddController");
 
 Routing::get("login","SecurityController");
 Routing::post("loginForm","SecurityController");
+Routing::post("registerForm","SecurityController");
+
 
 Routing::run($path);

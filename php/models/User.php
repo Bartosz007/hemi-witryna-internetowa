@@ -7,17 +7,18 @@ class User
     private string $password;
     private string $name;
     private string $surname;
-    private int $age;
     private bool $admin;
+    private string $file;
 
 
-    public function __construct(string $email, string $password, string $name, string $surname, int $age, bool $admin)
+
+    public function __construct(string $email, string $password, string $name, string $surname, bool $admin = false, string $file="none")
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
-        $this->age = $age;
+        $this->file = $file;
         $this->admin = $admin;
     }
 
@@ -62,15 +63,6 @@ class User
         $this->surname = $surname;
     }
 
-    public function getAge(): string
-    {
-        return $this->age;
-    }
-
-    public function setAge(string $age): void
-    {
-        $this->age = $age;
-    }
 
     public function isAdmin(): bool
     {
@@ -82,6 +74,14 @@ class User
         $this->admin = $admin;
     }
 
+    public function getFile(): string
+    {
+        return $this->file;
+    }
 
+    public function setFile(string $file): void
+    {
+        $this->file = $file;
+    }
 
 }

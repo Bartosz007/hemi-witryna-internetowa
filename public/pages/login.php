@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" xmlns="http://www.w3.org/1999/html">
     <head>
         <title>Hemi</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" type="text/css" href="public/css/style-log.css">
         <link rel="icon" href="public/img/icons/logo.svg">
 
+        <script defer type="text/javascript" src="public/js/login-scripts.js"></script>
+
     </head>
 
     <body>
         <div class="left-container">
-            <form class="register-form">
+            <form class="register-form" enctype="multipart/form-data" method="POST" action="registerForm">
                 <h2>Zarejestruj się</h2>
                 <input type="text" name="name" placeholder="Imię">
                 <input type="text" name="surname" placeholder="Nazwisko">
-                <input type="number" name="age" min="13" max="100" placeholder="Wiek">
                 <input type="email" name="email" placeholder="Podaj adres email">
                 <input type="password" name="password" placeholder="Podaj hasło">
                 <input type="password" name="repassword" placeholder="Powtórz hasło">
-
-                <button name="next" class="next">
+                <input type="file" name="avatar" placeholder="Podaj zdjęcie profilowe">
+                <button name="next" class="buttons">
                     <p>DALEJ</p>
                     <img src="public/img/icons/right-arrow.svg" alt="right-arrow">
 
                 </button>
                 
-                <button name="login" class="login">
+                <div class="buttons" id="toLogin">
                     <p>ZALOGUJ SIĘ</p>  
-                    <img src="public/img/iconsright-arrow.svg" alt="right-arrow">
+                    <img src="public/img/icons/right-arrow.svg" alt="right-arrow">
                   
-                </button>
+                </div>
 
             </form>
         </div>
@@ -42,33 +43,36 @@
         </div>
 
         <div class="right-container">
-
             <form class="login-form" action="loginForm" method="POST">
-
-                <?php if(isset($messages)){
-                    foreach ($messages as $message){
-                        echo $message;
-                    }
-                }
-                ?>
-
                 <h2>Zaloguj się</h2>
                 <input type="email" name="email" placeholder="Adres email">
                 <input type="password" name="password" placeholder="Hasło">
-                <button name="next" class="next" type="submit">
+                <button name="next" class="buttons" type="submit">
                     <p>DALEJ</p>
                     <img src="public/img/icons/right-arrow.svg" alt="right-arrow">
 
                 </button>
                 
-                <button name="register" class="register">
+                <div class="buttons" id="toRegister">
                     <img src="public/img/icons/left-arrow.svg" alt="left-arrow">
                     <p>ZAREJESTRUJ SIĘ</p>                 
-                </button>
+                </div>
 
             </form>
 
         </div>
+
+        <?php if(isset($messages)){
+            foreach ($messages as $message){
+                // echo $message;
+                echo "<div id='alert' class='fadeOut'>
+                        <h1>
+                            $message
+                        </h1>
+                    </div>";
+            }
+        }
+        ?>
 
     </body>
 
