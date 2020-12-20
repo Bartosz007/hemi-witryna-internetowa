@@ -18,14 +18,14 @@ class Tile
                             <p>{$article->getSubtitle()}</p>
                             <div class='social-buttons'>
                                 <div class='left-side'>
-                                    <img src='public/img/icons/heart.svg' alt='share'>
-                                    <p class='heart-button'>{$article->getLikes()}</p>
-                                    <img src='public/img/icons/comment.svg' alt='comment'>
-                                    <p class='comment-button'>{$article->getComments()}</p>
-                                </div>
-                                <div class='right-side'>
-                                    <p class='share=button'>SHARE</p>
-                                    <img src='public/img/icons/share.svg' alt='share'>
+                                    <div>
+                                        <img src='public/img/icons/heart.svg' alt='share'>
+                                        <p class='heart-button'>{$article->getLikes()}</p>
+                                    </div>
+                                    <div>
+                                        <img src='public/img/icons/comment.svg' alt='comment'>
+                                        <p class='comment-button'>{$article->getComments()}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -45,15 +45,16 @@ class Tile
                                 <p>{$article->getSubtitle()}</p>
                                 <div class='social-buttons'>
                                     <div class='left-side'>
-                                        <img src='public/img/icons/heart.svg' alt='share'>
-                                        <p class='heart-button'>{$article->getLikes()}</p>
-                                        <img src='public/img/icons/comment.svg' alt='comment'>
-                                        <p class='comment-button'>{$article->getComments()}</p>
+                                        <div>
+                                            <img src='public/img/icons/heart.svg' alt='share'>
+                                            <p class='heart-button'>{$article->getLikes()}</p>
+                                        </div>
+                                        <div>
+                                            <img src='public/img/icons/comment.svg' alt='comment'>
+                                            <p class='comment-button'>{$article->getComments()}</p>
+                                        </div>
                                     </div>
-                                    <div class='right-side'>
-                                        <p class='share=button'>SHARE</p>
-                                        <img src='public/img/icons/share.svg' alt='share'>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

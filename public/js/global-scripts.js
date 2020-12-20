@@ -10,9 +10,7 @@ if(document.getElementById("logout") != null){
 }
 
 if(document.getElementById("alert") != null) {
-
     document.getElementById("alert").onclick = function () {
         fadeOut(this);
     }
-
 }

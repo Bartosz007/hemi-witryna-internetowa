@@ -53,8 +53,8 @@
 .social-buttons{
     display: flex;
 }
-.social-buttons div{
-    width: 50%;
+.social-buttons > div{
+    width: 100%;
 }
 
 .social-buttons img{
@@ -68,15 +68,13 @@
 
 .left-side{
     display: flex;    
-    justify-content: space-between
+    justify-content: space-around;
 }
 
-.right-side{
+.left-side div{
+    width: 50%;
     display: flex;
-    justify-content: flex-end;
-}
-.right-side img{
-    margin-left: 0.2em;
+    justify-content: space-evenly;
 }
 
 /*
