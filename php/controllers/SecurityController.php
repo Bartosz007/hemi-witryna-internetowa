@@ -3,7 +3,7 @@
 require_once "Controller.php";
 require_once __DIR__."/../models/User.php";
 require_once __DIR__.'/../repositories/UserRepository.php';
-require_once __DIR__."/../helpers/basicFunctions.php";
+require_once __DIR__ . "/../other/basicFunctions.php";
 
 class SecurityController extends Controller
 {

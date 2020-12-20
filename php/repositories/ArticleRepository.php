@@ -25,4 +25,33 @@ class ArticleRepository extends Repository
         return true;
     }
 
+    public function getAllArticles():array {
+        $articles = [];
+
+        $stmt = $this->database->connect()->prepare(
+            'SELECT id_article,title,subtitle,images,likes,count(id_comment) as "comments" 
+                        FROM "hemi-site"."articles" 
+                        LEFT JOIN "hemi-site"."comments" 
+                        USING(id_article) 
+                        GROUP BY (id_article)
+                        ORDER BY (datetime) DESC ;'
+        );
+
+        $stmt->execute();
+
+        $fetch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($fetch as $row){
+            array_push($articles,new BasicArticle(
+                $row["title"],
+                $row["subtitle"],
+                $row["images"],
+                $row["likes"],
+                $row["comments"],
+                $row["id_article"]
+            ));
+        }
+
+        return $articles;
+    }
+
 }

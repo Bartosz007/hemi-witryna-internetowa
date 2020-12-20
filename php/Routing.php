@@ -3,6 +3,7 @@
 require_once 'php/controllers/DefaultController.php';
 require_once 'php/controllers/SecurityController.php';
 require_once 'php/controllers/AddController.php';
+require_once 'php/controllers/NewsController.php';
 
 class Routing {
     public static $routes;

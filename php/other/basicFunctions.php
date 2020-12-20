@@ -1,6 +1,6 @@
 <?php
 
-require_once "SETTINGS.php";
+require_once __DIR__ . "/../constants/SETTINGS.php";
 
 function validate(int $size, string $type): bool{
 

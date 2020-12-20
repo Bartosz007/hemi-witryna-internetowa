@@ -1,8 +1,8 @@
 <?php
 
 require_once "Controller.php";
-require_once __DIR__."/../helpers/basicFunctions.php";
-require_once __DIR__."/../helpers/SETTINGS.php";
+require_once __DIR__ . "/../other/basicFunctions.php";
+require_once __DIR__ . "/../constants/SETTINGS.php";
 require_once __DIR__."/../repositories/ArticleRepository.php";
 
 class AddController extends Controller
@@ -37,8 +37,6 @@ class AddController extends Controller
             if(is_uploaded_file($_FILES["files"]["tmp_name"][$i])
                 && validate($_FILES["files"]["size"][$i],$_FILES["files"]["type"][$i])){
 
-               // $date = new DateTime();
-               // $date->format('Y-m-d')
 
                 $fileid = explode("/",$_FILES["files"]["tmp_name"][$i])[2];
                 $ext = pathinfo($_FILES["files"]["name"][$i], PATHINFO_EXTENSION);

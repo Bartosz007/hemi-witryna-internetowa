@@ -2,7 +2,7 @@
 
 require_once "Repository.php";
 require_once __DIR__."/../models/User.php";
-require_once __DIR__."/../helpers/SETTINGS.php";
+require_once __DIR__ . "/../constants/SETTINGS.php";
 
 class UserRepository extends Repository
 {

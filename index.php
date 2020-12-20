@@ -12,8 +12,9 @@ Routing::get("main","DefaultController");
 Routing::get("article","DefaultController");
 Routing::get("contact","DefaultController");
 Routing::get("crew","DefaultController");
-Routing::get("news","DefaultController");
 Routing::get("search","DefaultController");
+
+Routing::get("news","NewsController");
 
 Routing::get("add","AddController");
 Routing::post("addArticle","AddController");

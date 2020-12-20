@@ -1,34 +1,21 @@
 <?php
 
+require_once "BasicArticle.php";
 
-class Article
+class Article extends BasicArticle
 {
-    private string $title;
-    private string $subtitle;
     private string $content;
-    private string $images;
     private string $datetime;
-    private string $owner_id;
+    private int $owner_id;
 
-
-    public function __construct(string $title, string $subtitle, string $content, string $images, string $datetime, string $owner_id)
+    public function __construct(string $title, string $subtitle, string $content,
+                                string $images, string $datetime, int $owner_id,
+                                int $likes = 0, int $comments = 0, int $id = 0)
     {
-        $this->title = $title;
-        $this->subtitle = $subtitle;
+        parent::__construct($title,$subtitle,$images,$likes,$comments, $id);
         $this->content = $content;
-        $this->images = $images;
         $this->datetime = $datetime;
         $this->owner_id = $owner_id;
-    }
-
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    public function getSubtitle(): string
-    {
-        return $this->subtitle;
     }
 
     public function getContent(): string
@@ -36,20 +23,16 @@ class Article
         return $this->content;
     }
 
-    public function getImages(): string
-    {
-        return $this->images;
-    }
-
     public function getDatetime(): string
     {
         return $this->datetime;
     }
 
-    public function getOwnerId(): string
+    public function getOwnerId(): int
     {
         return $this->owner_id;
     }
+
 
 
 }

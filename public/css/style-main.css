@@ -25,6 +25,19 @@ input::placeholder{
     color: black;
 }
 
+a{
+    all:unset;
+    cursor: pointer;
+}
+a:visited{
+    all:unset;
+    cursor: pointer;
+    color: white;
+}
+
+button{
+    cursor: pointer;
+}
 /*
 
     sekcja nawigacji
@@ -78,12 +91,13 @@ ul{
     position: relative;
 }
 
-a{
+li a{
     text-decoration: none;
     color:white;
     font-size: .75em;
     font-weight: bold;
 }
+
 
 li{
     margin-bottom: 1.2em;
@@ -124,14 +138,26 @@ main{
 
 /*
 
+
     sekcja newsów
 
 */
 
 .section-news{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3em;
+}
 
+.news-line-type1{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-gap: 3em;
+}
+
+.news-line-type2{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 3em;
 }
 
