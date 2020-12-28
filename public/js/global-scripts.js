@@ -11,6 +11,15 @@ if(document.getElementById("logout") != null){
 
 if(document.getElementById("alert") != null) {
     document.getElementById("alert").onclick = function () {
-        fadeOut(this);
+        let opacity = 0.85;
+
+        let interval  = setInterval(function (){
+            document.getElementById("alert").style.opacity = opacity;
+            if(opacity <0.05){
+                clearInterval(interval);
+                document.getElementById("alert").style.display = "none";
+            }
+            opacity = opacity - 0.05;
+        },40);
     }
 }

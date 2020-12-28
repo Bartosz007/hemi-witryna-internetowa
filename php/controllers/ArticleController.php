@@ -30,7 +30,7 @@ class ArticleController extends Controller
         $slider = new Slider();
 
         $this->render("article",[
-            "slider" => $slider->getSlider($article->getImages()),
+            "slider" => $slider->getSlider($article->getImages(),$article->getTitle()),
             "content"=>$bigArticle->getArticle($article)
             ]);
     }

@@ -21,7 +21,7 @@ class MainController extends Controller
         $slider = new Slider();
 
         $this->render("main",[
-            "slider" => $slider->getSlider($articles[0]->getImages()),
+            "slider" => $slider->getSlider($articles[0]->getImages(),$articles[0]->getTitle()),
             "content"=>$lineTiles->getMainLines($articles)
         ]);
 
