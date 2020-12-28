@@ -49,16 +49,21 @@
     }
 
 
-    .news-block-type1,.news-block-type2,.news-block-type3{
+    .news-block-type1,.news-block-type2{
         width: 100%;
         height: 35vh;        
     }
-    .content-type1 > p,.content-type2 > p,.content-type3 > p {
+    .content-type1 > p,.content-type2 > p {
         display: none;
     }
 
-    .content-type1 > h5,.content-type2 > h5,.content-type3 > h5{
+    .content-type1 > h5,.content-type2 > h5{
         font-size: 0.55em;
+    }
+
+    .news-line-type1, .news-line-type2{
+        grid-template-columns: 1fr;
+        grid-gap: 0;
     }
 
     /*
@@ -107,14 +112,10 @@
    
     .social-buttons{
         height: 30%;
+        font-size: 0.5em;
     }
 
-    .social-buttons p{
-        font-size: 0.4em;
-    }
-    .social-buttons img{
-        height: 0.4em;
-    }
+
 
      /*
     
@@ -208,6 +209,17 @@
     .article-text{
         font-size: 0.35em;
         text-align: center;
+    }
+
+    .like img{
+        width: 1em;
+    }
+
+    .comment, .add-comment, .add-comment-form textarea{
+        font-size: 0.5em;
+    }
+    .comment-owner{
+        font-size: 0.7em;
     }
 
     /*
@@ -312,6 +324,17 @@
         margin-bottom: 0.2em;
     }
 
+    /*
+
+        sekcja dodawania
+
+
+    */
+    .add-form{
+        width: 90%;
+        font-size: 1em;
+    }
+
 
     /*
     
@@ -325,7 +348,7 @@
     tymczasowo ------|
                     \/
     
-    */
+
     main,.mobile-header{
         display: none;
     }
@@ -369,5 +392,5 @@
         right: 0.8em;
         height: 2.5em;
     }
-
+*/
 }
