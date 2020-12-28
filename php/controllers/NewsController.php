@@ -1,7 +1,7 @@
 <?php
 
 require_once "Controller.php";
-require_once __DIR__."/../other/LineTiles.php";
+require_once __DIR__ . "/../printClasses/LineTiles.php";
 
 class NewsController extends Controller
 {

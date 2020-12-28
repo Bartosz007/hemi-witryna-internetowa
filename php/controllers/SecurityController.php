@@ -4,6 +4,7 @@ require_once "Controller.php";
 require_once __DIR__."/../models/User.php";
 require_once __DIR__.'/../repositories/UserRepository.php';
 require_once __DIR__ . "/../other/basicFunctions.php";
+require_once __DIR__ . "/../constants/PRIVATE.php";
 
 class SecurityController extends Controller
 {
@@ -82,6 +83,23 @@ class SecurityController extends Controller
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/main");
         }
+
+    }
+
+    public function contact(){
+        $this->render("contact");
+    }
+
+    public function sendForm(){
+        $from = $_POST['email'];
+        $header = "From: $from \nContent-Type:".
+            ' text/plain;charset="UTF-8"'.
+            "\nContent-Transfer-Encoding: 8bit";
+
+
+        $response = mail(EMAIL,$_POST["title"],$_POST["text"],$header);
+
+        return $this->render("contact",["messages"=>["Wysłanie maila wymaga klienta poczty(po stronie serwera)!"]]);
 
     }
 

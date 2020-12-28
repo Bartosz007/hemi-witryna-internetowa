@@ -40,6 +40,15 @@ class LineTiles
         return $this->content;
     }
 
+    public function getMainLines(array $articles): string {
+
+        foreach ($articles as $article){
+            $this->content = $this->content.$this->getTile($article);
+        }
+
+        return $this->content;
+    }
+
     private function createLine(): string{
 
         if($this->lineType){
@@ -52,6 +61,7 @@ class LineTiles
 
     }
 
+
     private function endLine():string{
         return "</div>";
     }
@@ -62,7 +72,8 @@ class LineTiles
         }else{
             return $this->tile->getSecondType($article);
         }
-
     }
+
+
 
 }

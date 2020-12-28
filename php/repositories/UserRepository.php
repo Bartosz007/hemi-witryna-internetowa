@@ -2,6 +2,7 @@
 
 require_once "Repository.php";
 require_once __DIR__."/../models/User.php";
+require_once __DIR__."/../models/Admin.php";
 require_once __DIR__ . "/../constants/SETTINGS.php";
 
 class UserRepository extends Repository
@@ -37,6 +38,36 @@ class UserRepository extends Repository
             $user['avatar']
         );
 
+    }
+
+    public function getAdmins():array{
+        $admins = [];
+
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM "hemi-site"."users"
+                        LEFT JOIN "hemi-site"."user_details"
+                        USING(id_user_details)
+                        LEFT JOIN "hemi-site"."admins_description"
+                        USING(id_user)
+                        WHERE admin = true;'
+        );
+
+        $stmt->execute();
+
+        $fetch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($fetch as $row){
+            $user = new User(
+                $row["email"],
+                "",
+                $row["name"],
+                $row["surname"],
+                $row["admin"],
+                $row["avatar"]);
+
+            array_push($admins,new Admin($user,$row["description"]));
+        }
+
+        return $admins;
     }
 
     public function addUser(User $user, array $avatar): bool{

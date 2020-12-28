@@ -65,174 +65,44 @@
             <main>
                 <div class="main-content">
 
-                    <div class="slider">
-                        <img src="public/img/photos/template-photo.jpg">
-                        <div class="title-container">
-                            <h1>Piękna i bestia...</h1>
-                        </div>
-                        
-                        <div class="slider-dots">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                    </div>
+                    <?php
+
+                    if(isset($slider)){
+                        echo $slider;
+                    }
+
+                    ?>
+
+
 
                     <section class="section-main">
-                        <div class="news-block-type1" id="news1">
-                            <div class="photo-type1">
-                                <img src="public/img/photos/template-photo.jpg" alt="template-photo">
-                            </div>
-                            <div class="text-type1">
-                                <div class="content-type1">
-                                    <h5>Playmounth Baarracuda po renowacji</h5>
-                                    <p>lorem ipsum, lorem ipsum dolores</p>
-                                    <div class="social-buttons">
-                                        <div class="left-side">
-                                            <img src="public/img/icons/heart.svg" alt="share">
-                                            <p class="heart-button">888</p>
-                                            <img src="public/img/icons/comment.svg" alt="comment">
-                                            <p class="comment-button">99</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p class="share=button">SHARE</p>
-                                            <img src="public/img/icons/share.svg" alt="share">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="news-block-type1" >
-                            <div class="photo-type1">
-                                <img src="public/img/photos/template-photo.jpg" alt="template-photo">
-                            </div>
-                            <div class="text-type1">
-                                <div class="content-type1">
-                                    <h5>Playmounth Baarracuda po renowacji</h5>
-                                    <p>lorem ipsum, lorem ipsum dolores</p>
-                                    <div class="social-buttons">
-                                        <div class="left-side">
-                                            <img src="public/img/icons/heart.svg" alt="share">
-                                            <p class="heart-button">888</p>
-                                            <img src="public/img/icons/comment.svg" alt="comment">
-                                            <p class="comment-button">99</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p class="share=button">SHARE</p>
-                                            <img src="public/img/icons/share.svg" alt="share">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="news-block-type1">
-                            <div class="photo-type1">
-                                <img src="public/img/photos/template-photo.jpg" alt="template-photo">
-                            </div>
-                            <div class="text-type1">
-                                <div class="content-type1">
-                                    <h5>Playmounth Baarracuda po renowacji</h5>
-                                    <p>lorem ipsum, lorem ipsum dolores</p>
-                                    <div class="social-buttons">
-                                        <div class="left-side">
-                                            <img src="public/img/icons/heart.svg" alt="share">
-                                            <p class="heart-button">888</p>
-                                            <img src="public/img/icons/comment.svg" alt="comment">
-                                            <p class="comment-button">99</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p class="share=button">SHARE</p>
-                                            <img src="public/img/icons/share.svg" alt="share">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
 
-                        <div class="news-block-type1" >
-                            <div class="photo-type1">
-                                <img src="public/img/photos/template-photo.jpg" alt="template-photo">
-                            </div>
-                            <div class="text-type1">
-                                <div class="content-type1">
-                                    <h5>Playmounth Baarracuda po renowacji</h5>
-                                    <p>lorem ipsum, lorem ipsum dolores</p>
-                                    <div class="social-buttons">
-                                        <div class="left-side">
-                                            <img src="public/img/icons/heart.svg" alt="share">
-                                            <p class="heart-button">888</p>
-                                            <img src="public/img/icons/comment.svg" alt="comment">
-                                            <p class="comment-button">99</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p class="share=button">SHARE</p>
-                                            <img src="public/img/icons/share.svg" alt="share">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="news-block-type1" id="news2">
-                            <div class="photo-type1">
-                                <img src="public/img/photos/template-photo.jpg" alt="template-photo">
-                            </div>
-                            <div class="text-type1">
-                                <div class="content-type1">
-                                    <h5>Playmounth Baarracuda po renowacji</h5>
-                                    <p>lorem ipsum, lorem ipsum dolores</p>
-                                    <div class="social-buttons">
-                                        <div class="left-side">
-                                            <img src="public/img/icons/heart.svg" alt="share">
-                                            <p class="heart-button">888</p>
-                                            <img src="public/img/icons/comment.svg" alt="comment">
-                                            <p class="comment-button">99</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p class="share=button">SHARE</p>
-                                            <img src="public/img/icons/share.svg" alt="share">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="news-block-type1" id="news3">
-                            <div class="photo-type1">
-                                <img src="public/img/photos/template-photo.jpg" alt="template-photo">
-                            </div>
-                            <div class="text-type1">
-                                <div class="content-type1">
-                                    <h5>Playmounth Baarracuda po renowacji</h5>
-                                    <p>lorem ipsum, lorem ipsum dolores</p>
-                                    <div class="social-buttons">
-                                        <div class="left-side">
-                                            <img src="public/img/icons/heart.svg" alt="share">
-                                            <p class="heart-button">888</p>
-                                            <img src="public/img/icons/comment.svg" alt="comment">
-                                            <p class="comment-button">99</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p class="share=button">SHARE</p>
-                                            <img src="public/img/icons/share.svg" alt="share">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
+                        <?php
+
+                        if(isset($content)){
+                            echo $content;
+                        }
+
+                        ?>
+
                     </section>
 
                 
                 </div>
            </main>
 
-        </div>       
+        </div>
+
+        <div id='alert' class='fadeOut' <?php if(isset($messages)) echo "style='display:flex'"; ?> >
+
+            <?php if(isset($messages)){
+                foreach ($messages as $message){
+                    echo "<h1>$message</h1>";
+                }
+            }
+            ?>
+
+        </div>
 
     </body>
 

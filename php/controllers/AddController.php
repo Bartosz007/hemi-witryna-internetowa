@@ -65,7 +65,8 @@ class AddController extends Controller
         $date->format('Y-m-d');
         $userRepository = new UserRepository();
 
-        $article = new Article($_POST["title"],
+        $article = new Article(
+            $_POST["title"],
             $_POST["subtitle"],
             $_POST["text"],
             implode(",",$tmpFileNames),

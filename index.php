@@ -8,13 +8,10 @@ $path = parse_url($path, PHP_URL_PATH);
 if($path=="") $path = "main";
 
 
-Routing::get("main","DefaultController");
-Routing::get("article","DefaultController");
-Routing::get("contact","DefaultController");
-Routing::get("crew","DefaultController");
-Routing::get("search","DefaultController");
+Routing::get("main","MainController");
 
-Routing::get("news","NewsController");
+
+Routing::get("search","DefaultController");
 
 Routing::get("add","AddController");
 Routing::post("addArticle","AddController");
@@ -22,6 +19,12 @@ Routing::post("addArticle","AddController");
 Routing::get("login","SecurityController");
 Routing::post("loginForm","SecurityController");
 Routing::post("registerForm","SecurityController");
+Routing::post("contact","SecurityController");
+Routing::get("sendForm","SecurityController");
 
+Routing::get("news","NewsController");
+
+Routing::get("article","ArticleController");
+Routing::get("crew","CrewController");
 
 Routing::run($path);

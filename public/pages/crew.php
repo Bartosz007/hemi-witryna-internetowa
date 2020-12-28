@@ -3,10 +3,14 @@
     <head>
         <title>Hemi</title>
         <meta charset="UTF-8"/>
+        <link rel="icon" href="public/img/icons/logo.svg">
+
         <link rel="stylesheet" type="text/css" href="public/css/style-main.css">
         <link rel="stylesheet" type="text/css" href="public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="public/css/style-mobile.css">
-        <link rel="icon" href="public/img/icons/logo.svg">
+
+        <script defer type="text/javascript" src="public/js/functions.js"></script>
+        <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
     </head>
 
     <body>
@@ -35,7 +39,18 @@
                         <li><a href="news" >News</a></li>
                         <li><a href="#" >Ekipa</a></li>
                         <li><a href="contact" >Kontakt</a></li>
-                        <li><a href="login" >Zaloguj się</a></li>
+
+                        <?php
+                        if(isset($_COOKIE["email"]))
+                            echo '<li id="logout"><a href="main" >Wyloguj się</a></li>';
+                        else
+                            echo '<li><a href="login" >Zaloguj się</a></li>';
+
+
+                        if(isset($_COOKIE["admin"]) && $_COOKIE["admin"] = true)
+                            echo '<li><a href="add" >Dodaj artukuł</a></li>';
+
+                        ?>
                         <li>
                             <a href="search" >Szukaj
                                 <img src="public/img/icons/search.svg" alt="search">
@@ -51,76 +66,27 @@
                 <div class="main-content">
 
                     <section class="section-crew">
-                        <div class="crew-member">
-                            <div class="crew-member-content">
 
-                                <div class="crew-data">
-                                    <img src="public/img/photos/template-people.JPG" alt="people">
-                                    <div class="crew-complex-data">                                        
-                                        <h1>Imię Nazwisko</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                                            sed do eiusmod tempor incididunt ut ero labore et dolore.</p>                                        
-                                    </div>
-                                </div>
-
-                                <div class="crew-social-networks">
-                                    <img src="public/img/icons/instagram.svg" alt="insta">
-                                    <img src="public/img/icons/twitter.svg" alt="twitter">
-                                    <img src="public/img/icons/facebook.svg" alt="fb">
-                                    <img src="public/img/icons/website.svg" alt="web">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="crew-member">
-                            <div class="crew-member-content">
-
-                                <div class="crew-data">
-                                    <img src="public/img/photos/template-people.JPG" alt="people">
-                                    <div class="crew-complex-data">                                        
-                                        <h1>Imię Nazwisko</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                                            sed do eiusmod tempor incididunt ut ero labore et dolore.</p>                                        
-                                    </div>
-                                </div>
-
-                                <div class="crew-social-networks">
-                                    <img src="public/img/icons/instagram.svg" alt="insta">
-                                    <img src="public/img/icons/twitter.svg" alt="twitter">
-                                    <img src="public/img/icons/facebook.svg" alt="fb">
-                                    <img src="public/img/icons/website.svg" alt="web">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="crew-member">
-                            <div class="crew-member-content">
-
-                                <div class="crew-data">
-                                    <img src="public/img/photos/template-people.JPG" alt="people">
-                                    <div class="crew-complex-data">                                        
-                                        <h1>Imię Nazwisko</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                                            sed do eiusmod tempor incididunt ut ero labore et dolore.</p>                                        
-                                    </div>
-                                </div>
-
-                                <div class="crew-social-networks">
-                                    <img src="public/img/icons/instagram.svg" alt="insta">
-                                    <img src="public/img/icons/twitter.svg" alt="twitter">
-                                    <img src="public/img/icons/facebook.svg" alt="fb">
-                                    <img src="public/img/icons/website.svg" alt="web">
-                                </div>
-
-                            </div>
-                        </div>
+                        <?php if(isset($admins)) {
+                            echo $admins;
+                        }
+                        ?>
 
                     </section>
 
                 </div>
             </main>
+
+       </div>
+
+       <div id='alert' class='fadeOut' <?php if(isset($messages)) echo "style='display:flex'"; ?> >
+
+           <?php if(isset($messages)){
+               foreach ($messages as $message){
+                   echo "<h1>$message</h1>";
+               }
+           }
+           ?>
 
        </div>
 

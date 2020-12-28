@@ -10,7 +10,7 @@ class Article extends BasicArticle
 
     public function __construct(string $title, string $subtitle, string $content,
                                 string $images, string $datetime, int $owner_id,
-                                int $likes = 0, int $comments = 0, int $id = 0)
+                                int $id = 0, int $likes = 0, int $comments = 0)
     {
         parent::__construct($title,$subtitle,$images,$likes,$comments, $id);
         $this->content = $content;

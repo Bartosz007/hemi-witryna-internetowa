@@ -211,6 +211,17 @@
         text-align: center;
     }
 
+    .like img{
+        width: 1em;
+    }
+
+    .comment, .add-comment, .add-comment-form textarea{
+        font-size: 0.5em;
+    }
+    .comment-owner{
+        font-size: 0.7em;
+    }
+
     /*
     
         sekcja ekipy

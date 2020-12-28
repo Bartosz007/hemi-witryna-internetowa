@@ -264,16 +264,31 @@ article{
     padding-top: 1em;
     padding-bottom: 1em;
 }
+.comment-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 15%;
+}
+
+.comment-header >img{
+    width: 100%;
+}
 
 .comment-owner {
-    width: 15%;
+    width: 100%;
     text-align: center;
     vertical-align: middle;
 }
 
+
+
 .comment-context{
     width: 85%;
+    text-align: center;
 }
+
 .add-comment-form{
     display: flex;
     width: 100%;
@@ -312,8 +327,8 @@ article{
 }
 
 .crew-member{
-    background: #E23217D3;  
-    height: 70%;
+    background: #E23217D3;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -344,8 +359,8 @@ article{
 }
 
 .crew-data img{
-    width: 4.6em;
-    height: 4.6em;
+    width: 5em;
+    height: 5em;
 }
 
 .crew-data h1{

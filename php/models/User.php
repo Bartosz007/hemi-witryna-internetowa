@@ -12,7 +12,9 @@ class User
 
 
 
-    public function __construct(string $email, string $password, string $name, string $surname, bool $admin = false, string $file="none")
+    public function __construct(string $email, string $password,
+                                string $name, string $surname,
+                                bool $admin = false, string $file="none")
     {
         $this->email = $email;
         $this->password = $password;
