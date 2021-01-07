@@ -254,6 +254,7 @@ article{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    cursor: pointer;
 }
 
 .comment-section{
@@ -295,12 +296,12 @@ article{
     text-align: center;
 }
 
-.add-comment-form{
+.add-comment-container{
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
-.add-comment-form textarea{
+.add-comment-container textarea{
     border: 0;
     outline: 0;
     resize: none;
@@ -309,7 +310,7 @@ article{
     text-align: center;
 }
 
-.add-comment-form button{
+.add-comment-container button{
     width: 15%;
     font-size: 1em;
     color: white;

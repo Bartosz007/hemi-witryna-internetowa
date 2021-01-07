@@ -26,6 +26,7 @@ class ArticleRepository extends Repository
     }
 
     public function getArticle(int $id):Article{
+
         $stmt = $this->database->connect()->prepare(
             'SELECT * FROM "hemi-site"."articles" WHERE id_article = :id;'
         );
@@ -104,4 +105,35 @@ class ArticleRepository extends Repository
 
         return $comments;
     }
+
+    public function addComment(int $id, string $email, string $text, string $date, string $time):bool {
+        $user = new UserRepository();
+        $id_user_details = $user->getUserDetailsIdByEmail($email);
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO "hemi-site"."comments" (id_article, id_user_details, text, date, time)
+            VALUES (?, ?, ?, ?, ?);
+        ');
+
+        return $stmt->execute([
+            $id,
+            $id_user_details,
+            $text,
+            $date,
+            $time
+        ]);
+
+    }
+
+    public function addLike(int $id_article){
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE "hemi-site"."articles" SET likes=likes+1 WHERE id_article = :id;
+        ');
+
+        $stmt->bindParam(':id', $id_article, PDO::PARAM_STR);
+
+        return $stmt->execute();
+    }
+
 }

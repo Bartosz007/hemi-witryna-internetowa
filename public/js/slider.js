@@ -1,13 +1,14 @@
 
 
 window.onload = function (){
+
     let slider_container = document.querySelector(".img-container");
     let slider_img = slider_container.children;
     let slider_dots = document.getElementsByClassName("dot")
     let length = slider_container.children.length;
     let time = 10000;
     let actual_slide = 0;
-
+    //TODO poprawić slider dla 1 zdjęcia
     let interval = setInterval(slide,time);
 
     function slide(){

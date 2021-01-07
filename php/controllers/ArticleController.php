@@ -35,4 +35,55 @@ class ArticleController extends Controller
             ]);
     }
 
+    public function addComment(){
+        if(!$this->isPost())
+            return $this->render('main');
+
+        $contentType = $_SERVER["CONTENT_TYPE"];
+
+        if(isset($contentType) && trim($contentType) == "application/json"){
+            $content = trim(file_get_contents("php://input"));
+            $decodedData = json_decode($content, true);
+
+
+            $response = $this->articleRepository->addComment(
+                $decodedData["id_article"],
+                $decodedData["email"],
+                $decodedData["text"],
+                $decodedData["date"],
+                $decodedData["time"]
+            );
+
+            header("Content-Type: application/json");
+            http_response_code(200);
+
+            if($response) {
+                $bigArticle = new BigArticle();
+                $userRepository = new UserRepository();
+                $user = $userRepository->getUserDetails($decodedData["email"]);
+
+                $comment = [
+                    "avatar"=>$user->getFile(),
+                    "name"=>$user->getName(),
+                    "surname"=>$user->getSurname(),
+                    "text"=>$decodedData["text"]
+                ];
+
+                echo json_encode([
+                    "response" => $response,
+                    "data" => $bigArticle->getComment($comment)
+                ]);
+            }
+            else{
+                echo json_encode(["response" => $response]);
+            }
+        }
+
+    }
+
+    public function addLike(int $id){
+        $this->articleRepository->addLike($id);
+        http_response_code(200);
+    }
+
 }

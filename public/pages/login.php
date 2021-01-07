@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="public/css/style-log.css">
         <link rel="icon" href="public/img/icons/logo.svg">
 
-        <script defer type="text/javascript" src="public/js/functions.js"></script>
         <script defer type="text/javascript" src="public/js/login-scripts.js"></script>
         <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
 

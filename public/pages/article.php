@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="public/css/style-mobile.css">
 
         <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
+        <script defer type="text/javascript" src="public/js/article-scripts.js"></script>
         <script defer type="text/javascript" src="public/js/slider.js"></script>
 
     </head>

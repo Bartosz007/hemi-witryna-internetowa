@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="public/css/style-mobile.css">
 
-        <script defer type="text/javascript" src="public/js/functions.js"></script>
         <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
     </head>
 
