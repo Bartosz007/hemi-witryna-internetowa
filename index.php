@@ -26,6 +26,7 @@ Routing::get("news","NewsController");
 Routing::get("article","ArticleController");
 Routing::post("addComment","ArticleController");
 Routing::get("addLike","ArticleController");
+Routing::post("searchArticle","ArticleController");
 
 
 Routing::get("crew","CrewController");

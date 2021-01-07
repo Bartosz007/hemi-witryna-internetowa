@@ -136,4 +136,34 @@ class ArticleRepository extends Repository
         return $stmt->execute();
     }
 
+    public function searchArticles(string $text): array{
+        $articles = [];
+        //TODO dodać sortowanie po dacie i godzinie
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM "hemi-site"."articles"
+                        WHERE LOWER(title) LIKE :search
+                        OR LOWER(subtitle) LIKE :search
+                        OR LOWER(content) LIKE :search;'
+        );
+        $text = "%{$text}%";
+        $stmt->bindParam(':search', $text, PDO::PARAM_STR);
+        $stmt->execute();
+        $fetch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($fetch as $article){
+            array_push($articles, new Article(
+                $article["title"],
+                $article["subtitle"],
+                $article["content"],
+                $article["images"],
+                $article["datetime"],
+                $article["id_user"],
+                $article["id_article"],
+                $article["likes"]
+            ));
+        }
+
+        return $articles;
+
+    }
 }

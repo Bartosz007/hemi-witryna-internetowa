@@ -86,4 +86,31 @@ class ArticleController extends Controller
         http_response_code(200);
     }
 
+    public function searchArticle(string $value){
+
+        if(!$this->isPost())
+            return $this->render('main');
+
+        $contentType = $_SERVER["CONTENT_TYPE"];
+
+        if(isset($contentType) && trim($contentType) == "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decodedData = json_decode($content, true);
+            $text = $decodedData["search"];
+
+            $articles = $this->articleRepository->searchArticles($text);
+            $lineTiles = new LineTiles();
+
+            header("Content-Type: application/json");
+            http_response_code(200);
+
+
+            echo json_encode([
+                "data" => $lineTiles->getMainLines($articles)
+            ]);
+
+        }
+
+    }
+
 }
