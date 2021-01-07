@@ -26,6 +26,7 @@ class ArticleRepository extends Repository
     }
 
     public function getArticle(int $id):Article{
+
         $stmt = $this->database->connect()->prepare(
             'SELECT * FROM "hemi-site"."articles" WHERE id_article = :id;'
         );
@@ -78,7 +79,6 @@ class ArticleRepository extends Repository
 
     public function getComments(int $id): array{
         $comments = [];
-        //TODO dodać sortowanie po dacie i godzinie
         $stmt = $this->database->connect()->prepare(
             'SELECT avatar, text, name, surname 
                         FROM "hemi-site"."articles"
@@ -86,7 +86,8 @@ class ArticleRepository extends Repository
                             USING(id_article)
                         JOIN "hemi-site"."user_details"
                             USING(id_user_details)
-                        WHERE id_article = :id;'
+                        WHERE id_article = :id
+                        ORDER BY date, time;'
         );
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
 
@@ -103,5 +104,66 @@ class ArticleRepository extends Repository
         }
 
         return $comments;
+    }
+
+    public function addComment(int $id, string $email, string $text, string $date, string $time):bool {
+        $user = new UserRepository();
+        $id_user_details = $user->getUserDetailsIdByEmail($email);
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO "hemi-site"."comments" (id_article, id_user_details, text, date, time)
+            VALUES (?, ?, ?, ?, ?);
+        ');
+
+        return $stmt->execute([
+            $id,
+            $id_user_details,
+            $text,
+            $date,
+            $time
+        ]);
+
+    }
+
+    public function addLike(int $id_article){
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE "hemi-site"."articles" SET likes=likes+1 WHERE id_article = :id;
+        ');
+
+        $stmt->bindParam(':id', $id_article, PDO::PARAM_STR);
+
+        return $stmt->execute();
+    }
+
+    public function searchArticles(string $text): array{
+        $articles = [];
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM "hemi-site"."articles"
+                        WHERE LOWER(title) LIKE :search
+                        OR LOWER(subtitle) LIKE :search
+                        OR LOWER(content) LIKE :search
+                        ORDER BY datetime;'
+        );
+        $text = "%{$text}%";
+        $stmt->bindParam(':search', $text, PDO::PARAM_STR);
+        $stmt->execute();
+        $fetch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($fetch as $article){
+            array_push($articles, new Article(
+                $article["title"],
+                $article["subtitle"],
+                $article["content"],
+                $article["images"],
+                $article["datetime"],
+                $article["id_user"],
+                $article["id_article"],
+                $article["likes"]
+            ));
+        }
+
+        return $articles;
+
     }
 }

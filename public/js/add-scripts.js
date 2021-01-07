@@ -1,4 +1,3 @@
-
 document.getElementsByName("addButton")[0].onclick = function (){
 
     let file = document.getElementsByName("files[]")[0];

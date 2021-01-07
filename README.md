@@ -5,5 +5,8 @@ Wykorzystane technologie:
 - HTML
 - CSS
 - PHP
+- postgreSQL
+- fetch
+
 
 #### Projekt z przedmiotu:  Wstep do projektowania stron internetowych

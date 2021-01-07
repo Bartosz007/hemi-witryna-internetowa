@@ -21,10 +21,10 @@ class Slider
         $length = count($images);
         //obrazki
         $this->text = $this->text."
-                    <img src='public/upload/articles/{$images[0]}' style='display: block; opacity: 1'>";
+                    <img src='public/upload/articles/{$images[0]}' style='display: block; opacity: 1' alt='carr'>";
         for($i = 1; $i < $length; $i++){
             $this->text = $this->text."
-                    <img src='public/upload/articles/{$images[$i]}' style='display: none; opacity: 0'>";
+                    <img src='public/upload/articles/{$images[$i]}' style='display: none; opacity: 0' alt='carr'>";
         }
 
 

@@ -154,4 +154,43 @@ class UserRepository extends Repository
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data["id_user"];
     }
+
+    public function getUserDetailsIdByEmail(string $email){
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM "hemi-site"."users" 
+             LEFT JOIN "hemi-site"."user_details" 
+             USING("id_user_details")
+             WHERE email = :email; 
+        ');
+
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data["id_user_details"];
+    }
+
+    public function getUserDetails(string $email): ?User{
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM "hemi-site"."users" 
+             LEFT JOIN "hemi-site"."user_details" 
+             USING("id_user_details")
+             WHERE email = :email; 
+        ');
+
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return new User(
+            "",
+            "",
+            $data['name'],
+            $data['surname'],
+            "",
+            $data['avatar']
+        );
+
+    }
 }

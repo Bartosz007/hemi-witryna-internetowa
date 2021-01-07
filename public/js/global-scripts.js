@@ -18,8 +18,14 @@ if(document.getElementById("alert") != null) {
             if(opacity <0.05){
                 clearInterval(interval);
                 document.getElementById("alert").style.display = "none";
+                document.getElementById("alert").style.opacity = "0.85";
             }
             opacity = opacity - 0.05;
         },40);
     }
+}
+
+function alertPage(text){
+    document.getElementById("alert").style.display = "flex";
+    document.getElementById("alert").innerHTML = "<h1>" +text+ "</h1>";
 }

@@ -14,7 +14,7 @@ h2{
 .center-container{
     width: 70vw;
     height: 100vh;
-    background: transparent linear-gradient(180deg, #EC3D0FE5 0%, #F84B06DA 76%, #FF5400D3 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #EC3D0FE5 0%, #F84B06DA 76%, #FF5400D3 100%) 0 0 no-repeat padding-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +70,7 @@ input{
 }
 
 .buttons{
-    background: transparent linear-gradient(90deg, #EC3D0FE5 0%, #F54808DC 63%, #FF5400D3 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(90deg, #EC3D0FE5 0%, #F54808DC 63%, #FF5400D3 100%) 0 0 no-repeat padding-box;
     border: 0;
     height: 3em;
     color: #FFFFFF;

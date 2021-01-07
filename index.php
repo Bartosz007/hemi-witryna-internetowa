@@ -10,7 +10,6 @@ if($path=="") $path = "main";
 
 Routing::get("main","MainController");
 
-
 Routing::get("search","DefaultController");
 
 Routing::get("add","AddController");
@@ -25,6 +24,11 @@ Routing::get("sendForm","SecurityController");
 Routing::get("news","NewsController");
 
 Routing::get("article","ArticleController");
+Routing::post("addComment","ArticleController");
+Routing::get("addLike","ArticleController");
+Routing::post("searchArticle","ArticleController");
+
+
 Routing::get("crew","CrewController");
 
 Routing::run($path);
