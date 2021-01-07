@@ -3,9 +3,6 @@ document.querySelector(".like").addEventListener("click", function (){
 
     let url = window.location.href.split("?")[1];
     url = url.split("=")[1];
-    let data ={
-        "id_article": url
-    }
 
     fetch(`/addLike/${url}`)
         .then(function (){

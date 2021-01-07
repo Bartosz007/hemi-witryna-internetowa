@@ -8,7 +8,6 @@ require_once __DIR__."/../repositories/ArticleRepository.php";
 class AddController extends Controller
 {
 
-    private array $messages = [];
     private ArticleRepository $articleRepository;
 
     public function __construct()
@@ -18,7 +17,7 @@ class AddController extends Controller
     }
 
     public function add(){
-        if($_COOKIE["admin"] == true)
+        if($_COOKIE["admin"])
             return $this->render("add-article");
         else
             return $this->render("main");

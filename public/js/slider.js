@@ -8,7 +8,10 @@ window.onload = function (){
     let length = slider_container.children.length;
     let time = 10000;
     let actual_slide = 0;
-    //TODO poprawić slider dla 1 zdjęcia
+
+    if(length === 1)
+        return;
+
     let interval = setInterval(slide,time);
 
     function slide(){

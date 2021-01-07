@@ -37,17 +37,10 @@ class SecurityController extends Controller
 
         $user = $this->userRepository->getUser($email,$password);
 
-        if(!$user){
+        if(!$user)
             return $this->render("login",["messages"=>["Podano złe dane logowania!"]]);
-        }else{
-            setcookie("email",$user->getEmail(), time()+86400 * 30);
-            setcookie("name",$user->getName(), time()+86400 * 30);
-            setcookie("surname",$user->getSurname(), time()+86400 * 30);
-            setcookie("admin",$user->isAdmin(), time()+86400 * 30);
-
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/main");
-        }
+        else
+            $this->setCookies($user);
     }
 
     public function registerForm(){
@@ -72,17 +65,11 @@ class SecurityController extends Controller
 
         $conn = $this->userRepository->addUser($user,$avatar);
 
-        if(!$conn){
+        if(!$conn)
             return $this->render("login",["messages"=>["Taki użytkownik juz istnieje!"]]);
-        }else{
-            setcookie("email",$user->getEmail(), time()+86400 * 30);
-            setcookie("name",$user->getName(), time()+86400 * 30);
-            setcookie("surname",$user->getSurname(), time()+86400 * 30);
-            setcookie("admin",$user->isAdmin(), time()+86400 * 30);
+        else
+            $this->setCookies($user);
 
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/main");
-        }
 
     }
 
@@ -97,10 +84,21 @@ class SecurityController extends Controller
             "\nContent-Transfer-Encoding: 8bit";
 
 
+        mail(EMAIL,$_POST["title"],$_POST["text"],$header);
         $response = mail(EMAIL,$_POST["title"],$_POST["text"],$header);
 
         return $this->render("contact",["messages"=>["Wysłanie maila wymaga klienta poczty(po stronie serwera)!"]]);
 
+    }
+
+    public function setCookies(User $user){
+        setcookie("email",$user->getEmail(), time()+86400 * 30);
+        setcookie("name",$user->getName(), time()+86400 * 30);
+        setcookie("surname",$user->getSurname(), time()+86400 * 30);
+        setcookie("admin",$user->isAdmin(), time()+86400 * 30);
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/main");
     }
 
 }

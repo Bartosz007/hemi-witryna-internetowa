@@ -4,7 +4,7 @@ document.querySelector("input[name='search']").addEventListener("keypress",funct
         search: this.value
     }
 
-    if(e.key == "Enter"){
+    if(e.key === "Enter"){
 
         fetch(`/searchArticle/${this.value}`,{
             method: "POST",

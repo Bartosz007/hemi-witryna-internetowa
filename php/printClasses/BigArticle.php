@@ -53,7 +53,7 @@ class BigArticle
             $text = $text . $this->getComment($comment);
         }
 
-        $text = $text . $this->getAddComment($id);
+        $text = $text . $this->getAddComment();
         $text = $text . "</section>";
 
         return $text;
@@ -71,7 +71,7 @@ class BigArticle
             </div>";
     }
 
-    public function getAddComment(int $id): string
+    public function getAddComment(): string
     {
         return "<div class='comment'>
                     <div class='add-comment-container'>

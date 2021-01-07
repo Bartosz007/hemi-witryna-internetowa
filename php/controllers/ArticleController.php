@@ -86,7 +86,7 @@ class ArticleController extends Controller
         http_response_code(200);
     }
 
-    public function searchArticle(string $value){
+    public function searchArticle(){
 
         if(!$this->isPost())
             return $this->render('main');

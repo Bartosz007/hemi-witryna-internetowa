@@ -79,7 +79,6 @@ class ArticleRepository extends Repository
 
     public function getComments(int $id): array{
         $comments = [];
-        //TODO dodać sortowanie po dacie i godzinie
         $stmt = $this->database->connect()->prepare(
             'SELECT avatar, text, name, surname 
                         FROM "hemi-site"."articles"
@@ -87,7 +86,8 @@ class ArticleRepository extends Repository
                             USING(id_article)
                         JOIN "hemi-site"."user_details"
                             USING(id_user_details)
-                        WHERE id_article = :id;'
+                        WHERE id_article = :id
+                        ORDER BY date, time;'
         );
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
 
@@ -138,12 +138,12 @@ class ArticleRepository extends Repository
 
     public function searchArticles(string $text): array{
         $articles = [];
-        //TODO dodać sortowanie po dacie i godzinie
         $stmt = $this->database->connect()->prepare(
             'SELECT * FROM "hemi-site"."articles"
                         WHERE LOWER(title) LIKE :search
                         OR LOWER(subtitle) LIKE :search
-                        OR LOWER(content) LIKE :search;'
+                        OR LOWER(content) LIKE :search
+                        ORDER BY datetime;'
         );
         $text = "%{$text}%";
         $stmt->bindParam(':search', $text, PDO::PARAM_STR);

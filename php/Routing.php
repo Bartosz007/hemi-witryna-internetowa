@@ -9,7 +9,7 @@ require_once 'php/controllers/CrewController.php';
 require_once 'php/controllers/MainController.php';
 
 class Routing {
-    public static $routes;
+    public static array $routes;
 
     public static function get($url, $controller){
         self::$routes[$url] = $controller;
