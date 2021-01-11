@@ -1,4 +1,14 @@
 
+<header class="mobile-header">
+    <div>
+        <img id="open-menu" src="public/img/icons/menu-button.svg" alt="menu">
+        <div class="logo">
+            <h2>Hemi</h2>
+            <img src="public/img/icons/logo.svg" alt="logo">
+        </div>
+    </div>
+</header>
+
 <nav>
     <img id="close-menu" src="public/img/icons/close.svg" alt="close">
     <div class="nav-content">
@@ -9,7 +19,7 @@
         </div>
 
         <ul>
-            <li><a href="#" >Strona główna</a></li>
+            <li><a href="main" >Strona główna</a></li>
             <li><a href="news" >News</a></li>
             <li><a href="crew" >Ekipa</a></li>
             <li><a href="contact" >Kontakt</a></li>

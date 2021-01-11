@@ -7,7 +7,7 @@
         <link rel="icon" href="public/img/icons/logo.svg">
 
         <script defer type="text/javascript" src="public/js/login-scripts.js"></script>
-        <script defer type="text/javascript" src="public/js/alert-scripts.js"></script>
+        <script defer type="text/javascript" src="public/js/alert.js"></script>
 
     </head>
 

@@ -2,6 +2,10 @@
 
 window.onload = function (){
 
+    let dotContainer = document.getElementsByClassName("slider-dots")[0];
+
+
+
     let slider_container = document.querySelector(".img-container");
     let slider_img = slider_container.children;
     let slider_dots = document.getElementsByClassName("dot")
@@ -9,8 +13,15 @@ window.onload = function (){
     let time = 10000;
     let actual_slide = 0;
 
-    if(length === 1)
+    let offset = dotContainer.offsetWidth/dotContainer.parentNode.offsetWidth * 100;
+    offset = 50.0 - offset / 2.0;
+    dotContainer.style.left = offset +"%";
+
+    if(length === 1){
+        dotContainer.remove();
         return;
+    }
+
 
     let interval = setInterval(slide,time);
 
@@ -32,17 +43,18 @@ window.onload = function (){
 
         slider_dots[i].addEventListener("click",function (){
             clearInterval(interval);
-            interval = setInterval(slide,time);
-
-            changeSlide(slider_img[actual_slide],slider_img[i]);
-            slider_dots[actual_slide].style = "background-color:white";
+            console.log(actual_slide%length)
+            changeSlide(slider_img[actual_slide%length],slider_img[i]);
+            slider_dots[actual_slide%length].style = "background-color:white";
             slider_dots[i].style = "background-color:black";
 
+            interval = setInterval(slide,time);
             actual_slide = i;
 
         })
 
     }
+
 
 }
 

@@ -16,15 +16,6 @@
 
     <body>
         <div class="main-container">
-            <header class="mobile-header">
-                <div>
-                    <img src="public/img/icons/menu-button.svg" alt="menu">
-                    <div class="logo">
-                        <h2>Hemi</h2>
-                        <img src="public/img/icons/logo.svg" alt="logo">
-                    </div>
-                </div>                
-            </header>
 
             <?php
                 include('elements/navigation.php');

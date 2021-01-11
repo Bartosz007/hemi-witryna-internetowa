@@ -10,3 +10,18 @@ if(document.getElementById("logout") != null){
 }
 
 
+document.getElementById("open-menu").onclick = function (){
+    document.getElementsByTagName("nav")[0].style.display = "flex";
+    document.getElementsByTagName("main")[0].style.display = "none";
+    document.getElementsByTagName("header")[0].style.display = "none";
+}
+
+document.getElementById("close-menu").onclick = function (){
+    document.getElementsByTagName("nav")[0].style.display = "none";
+    document.getElementsByTagName("main")[0].style.display = "flex";
+    document.getElementsByTagName("header")[0].style.display = "flex";
+}
+
+
+
+

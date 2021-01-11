@@ -9,21 +9,23 @@
         <link rel="icon" href="public/img/icons/logo.svg">
 
         <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
+        <script defer type="text/javascript" src="public/js/alert.js"></script>
         <script defer type="text/javascript" src="public/js/add-scripts.js"></script>
 
     </head>
 
     <body>
        <div class="main-container">
-            <header class="mobile-header">
-                <div>
-                    <img src="public/img/icons/menu-button.svg" alt="menu">
-                    <div class="logo">
-                        <h2>Hemi</h2>
-                        <img src="public/img/icons/logo.svg" alt="logo">
-                    </div>
-                </div>                
-            </header>
+
+           <header class="mobile-header">
+               <div>
+                   <img id="open-menu" src="public/img/icons/menu-button.svg" alt="menu">
+                   <div class="logo">
+                       <h2>Hemi</h2>
+                       <img src="public/img/icons/logo.svg" alt="logo">
+                   </div>
+               </div>
+           </header>
         
           <nav>
             <img id="close-menu" src="public/img/icons/close.svg" alt="close">
@@ -79,16 +81,9 @@
 
        </div>
 
-       <div id='alert' class='fadeOut' <?php if(isset($messages)) echo "style='display:flex'"; ?> >
-
-           <?php if(isset($messages)){
-               foreach ($messages as $message){
-                   echo "<h1>$message</h1>";
-               }
-           }
-           ?>
-
-       </div>
+      <?php
+      include("elements/alert.php");
+      ?>
 
 
 
