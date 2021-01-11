@@ -80,14 +80,8 @@ class ArticleRepository extends Repository
     public function getComments(int $id): array{
         $comments = [];
         $stmt = $this->database->connect()->prepare(
-            'SELECT avatar, text, name, surname 
-                        FROM "hemi-site"."articles"
-                        LEFT JOIN "hemi-site"."comments"
-                            USING(id_article)
-                        JOIN "hemi-site"."user_details"
-                            USING(id_user_details)
-                        WHERE id_article = :id
-                        ORDER BY date, time;'
+            'SELECT * FROM "hemi-site"."view_comments"
+                        WHERE id_article = :id;'
         );
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
 

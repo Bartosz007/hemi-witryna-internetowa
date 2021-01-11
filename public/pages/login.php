@@ -7,7 +7,7 @@
         <link rel="icon" href="public/img/icons/logo.svg">
 
         <script defer type="text/javascript" src="public/js/login-scripts.js"></script>
-        <script defer type="text/javascript" src="public/js/global-scripts.js"></script>
+        <script defer type="text/javascript" src="public/js/alert.js"></script>
 
     </head>
 
@@ -63,16 +63,8 @@
 
         </div>
 
-        <?php if(isset($messages)){
-            foreach ($messages as $message){
-                // echo $message;
-                echo "<div id='alert' class='fadeOut'>
-                        <h1>
-                            $message
-                        </h1>
-                    </div>";
-            }
-        }
+        <?php
+        include("elements/alert.php");
         ?>
 
     </body>

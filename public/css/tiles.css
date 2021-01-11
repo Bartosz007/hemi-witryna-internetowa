@@ -1,3 +1,6 @@
+
+
+
 .news-block-type1,.news-block-type2{
     background: #E23217D3;
     height: 40vh;
@@ -24,10 +27,16 @@
     type 1
 
 */
+.news-line-type1{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 3em;
+}
 
-.news-block-type1{
-    display: flex;
-    flex-direction: column;
+.news-line-type2{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 3em;
 }
 
 .photo-type1,.text-type1{
